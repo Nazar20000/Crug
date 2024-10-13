@@ -51,9 +51,7 @@ class TestView(context: Context, attributes: AttributeSet) : View(context, attri
         val radius = width.coerceAtMost(height) / 2f - 10f
 
         for (i in colors.indices) {
-            paintC.color = if (i == buttonClicked)
-                Color.GRAY
-            else colors[i]
+            paintC.color = colors[i]
             canvas.drawArc(
                 centerX - radius,
                 centerY - radius,
@@ -80,7 +78,7 @@ class TestView(context: Context, attributes: AttributeSet) : View(context, attri
                 paint
             )
         }
-        paintC.color = Color.GRAY
+        paintC.color = colors[buttonClicked]
         canvas.drawCircle(
             centerX.toFloat() ,
             centerY.toFloat() ,
